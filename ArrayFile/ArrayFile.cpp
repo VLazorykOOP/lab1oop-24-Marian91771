@@ -245,45 +245,35 @@ void ArrayLocal()
 
 int main()
 { 
-    
-    
-    
+    setlocale(LC_CTYPE, "Ukr");
     const int MAX_SIZE = 560;
-    std::cout << "Hello World!\n";
-    ShowMainMenu();
-    /*
-    double A[MAX_SIZE], B[MAX_SIZE],C[MAX_SIZE];
-    int n,m;
-    n = RndInputArray(MAX_SIZE, A);
-    WriteArrayTextFile(n, A, "1.txt");
-    m = ReadArrayTextFile(MAX_SIZE, B, "1.txt");
-    cout << " \n m= " << m << endl;
-    for (int i = 0; i < m; i++)
-        cout << B[i] << "   ";
-    WriteArrayBinFile(n, A, "1.bin");
-    m = ReadArrayBinFile(MAX_SIZE, C, "1.bin");
-    cout << " \n m= " << m << endl;
-    for (int i = 0; i < m; i++)
-        cout << C[i] << "   ";
-    cout << "\n  Vector \n";
-    vector<double> vA;
-    ConsoleInputVector(MAX_SIZE, vA);
-    for (auto v : vA) {
-        cout << v << "   ";
+    //ShowMainMenu();
+    //TaskV();
+    int a[100], n;
+    cout << "Введiть кiлькiсть елементiв масиву: "; cin >> n;
+
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    int max_negative = INT_MIN;
+    int max_negative_index = -1;
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] < 0 && a[i] > max_negative) {
+            max_negative = a[i];
+            max_negative_index = i;
+        }
     }
-*/
-    TaskV();
+
+    if (max_negative_index == -1) {
+        cout << "У масивi немає вiд'ємних чисел." << endl;
+    }
+    else {
+        cout << "Максимальний вiд'ємний елемент: " << max_negative << endl;
+        cout << "Його iндекс: " << max_negative_index << endl;
+    }
+
+    
+    
     return 1;
 
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
