@@ -272,7 +272,30 @@ int main()
         cout << "Його iндекс: " << max_negative_index << endl;
     }
 
-    
+    int B, A1, A1_index;
+    cout << "Введiть B: "; cin >> B;
+    cout << "Введiть A1: "; cin >> A1;
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] > A1) {
+            A1_index = i;
+            break;
+        }
+    }
+
+    int min_value = INT_MAX;
+    for (int i = 0; i < A1_index; i++) {
+        if (a[i] < B && a[i] < min_value) {
+            min_value = a[i];
+        }
+    }
+
+    if (min_value == INT_MAX) {
+        cout << "Немає елементiв, менших " << B << " до першого елемента, більшого " << A1 << endl;
+    }
+    else {
+        cout << "Мiнiмальне значення: " << min_value << endl;
+    }
     
     return 1;
 
