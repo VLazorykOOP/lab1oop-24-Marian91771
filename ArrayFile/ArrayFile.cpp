@@ -246,10 +246,10 @@ void ArrayLocal()
 int main()
 { 
     setlocale(LC_CTYPE, "Ukr");
-    const int MAX_SIZE = 560;
-    //ShowMainMenu();
-    //TaskV();
+   
     int a[100], n;
+    
+    cout << "Task 1\n";
     cout << "Введiть кiлькiсть елементiв масиву: "; cin >> n;
 
     for (int i = 0; i < n; i++) cin >> a[i];
@@ -272,6 +272,7 @@ int main()
         cout << "Його iндекс: " << max_negative_index << endl;
     }
 
+    cout << "Task 2\n";
     int B, A1, A1_index;
     cout << "Введiть B: "; cin >> B;
     cout << "Введiть A1: "; cin >> A1;
@@ -297,6 +298,23 @@ int main()
         cout << "Мiнiмальне значення: " << min_value << endl;
     }
     
+    
+    cout << "Task 3\n";
+    int n_p, p[200], count=0;
+    float r, r1;
+    cout << "Введiть кiлькiсть точок: "; cin >> n_p;
+    n_p *= 2; //точка має два числа
+    for (int i = 0; i < n_p; i++) cin >> p[i];
+    
+    cout << "Введiть радіус: "; cin >> r;
+
+    for (int i = 0; i < n_p; i += 2) {
+        r1 = ((i * i) + ((i + 1) * (i + 1))) * 1.2;
+        if (r1 == r) count++;
+    }
+
+    cout << count << endl;
+
     return 1;
 
 }
