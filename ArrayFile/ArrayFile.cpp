@@ -5,6 +5,7 @@
 #include <fstream>
 #include <ios>
 #include <vector>
+#include <math.h>
 
 #include <time.h>
 
@@ -310,7 +311,7 @@ int main()
 
     for (int i = 0; i < n_p; i += 2) {
         r1 = ((i * i) + ((i + 1) * (i + 1))) * 1.2;
-        if (r1 == r) count++;
+        if (fabs(r1 - r)<1e-5) count++;
     }
 
     cout << count << endl;
